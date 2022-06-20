@@ -1,4 +1,4 @@
-package chapter2
+package chapter02
 
 fun main() {
     val map = mapOf("a" to 1, "b" to 2)

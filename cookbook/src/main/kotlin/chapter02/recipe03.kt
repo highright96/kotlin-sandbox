@@ -1,4 +1,4 @@
-package chapter2
+package chapter02
 
 /*
 Optional 이나 널 혀용 속성 함수는 시그니처의 마지막에 위치시켜야 한다.

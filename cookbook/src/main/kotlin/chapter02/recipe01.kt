@@ -1,4 +1,4 @@
-package chapter2
+package chapter02
 
 /*
 레시피 2.1 널 허용 타입 사용하기
