@@ -12,7 +12,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    testImplementation("org.assertj:assertj-core:3.19.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.6.20")
+    implementation("com.google.code.gson:gson:2.8.9")
 }
 
 tasks.test {
