@@ -1,6 +1,6 @@
 package inflearn.lec19
 
-import lec18.Fruit
+import inflearn.lec18.Fruit
 
 typealias FruitFilter = (Fruit) -> Boolean
 

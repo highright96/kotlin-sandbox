@@ -4,7 +4,7 @@ import inflearn.lec01.Person
 
 fun main() {
 
-    val person = _root_ide_package_.inflearn.lec01.Person("남상우")
+    val person = Person("남상우")
     println("이름 : ${person.name}")
 
     val name = "남상우"

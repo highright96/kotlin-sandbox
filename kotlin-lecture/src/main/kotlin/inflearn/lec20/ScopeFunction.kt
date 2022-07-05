@@ -1,7 +1,7 @@
 package inflearn.lec20
 
-import lec14.PersonDto
-import lec19.Person
+import inflearn.lec14.PersonDto
+import inflearn.lec19.Person
 
 fun main() {
 

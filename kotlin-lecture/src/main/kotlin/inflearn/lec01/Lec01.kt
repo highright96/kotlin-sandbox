@@ -33,5 +33,5 @@ fun main() {
     /*
     객체 인스턴스화
     */
-    val person = _root_ide_package_.inflearn.lec01.Person("최태현");
+    val person = Person("최태현");
 }
