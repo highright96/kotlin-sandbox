@@ -5,7 +5,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlin.system.measureTimeMillis
 
 /*
 suspend 함수를 호출하면 메인 스레드는 delay(1000ms) 되는 동안 다른 작업을 할 수 있다. (비동기)
@@ -18,10 +17,11 @@ Flow 는 비동기로 동작하면서 여러개의 값을 반환하는 함수를
 */
 
 fun main() = runBlocking {
+    // 메인 스레드가 block 되지 않는지 확인하는 코루틴
     launch {
         for (k in 1..3) {
-            delay(100)
             println("I'm not blocked $k")
+            delay(100) // delay 되는 동안  flow 실행
         }
     }
 
@@ -29,13 +29,13 @@ fun main() = runBlocking {
 }
 
 suspend fun simpleWithSuspend(): List<Int> {
-    delay(1000)
+    delay(1000) // 무언가 의미있는 작업을 해서 지연되는 척
     return listOf(1, 2, 3)
 }
 
 fun simpleWithFlow(): Flow<Int> = flow {
     for (i in 1..3) {
-        delay(100) // suspend 함수 사용 가능
-        emit(i)
+        delay(100) // delay 되는 동안 launch 실행
+        emit(i) // 값 배출
     }
 }

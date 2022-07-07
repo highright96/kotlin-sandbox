@@ -12,10 +12,9 @@ flow 블록 내부에 있는 코드는 flow 가 collect 되기 전까지 실행�
 
 fun simple(): Flow<Int> = flow {
     println("Flow started")
-    println("by ${Thread.currentThread().name}")
     for (i in 1..3) {
         delay(100)
-        println("by ${Thread.currentThread().name}")
+        println("emit $i")
         emit(i)
     }
 }
