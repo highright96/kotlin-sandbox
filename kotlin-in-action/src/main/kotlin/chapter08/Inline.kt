@@ -2,19 +2,24 @@ package chapter08
 
 import java.util.concurrent.locks.Lock
 
-inline fun <T> synchronized(lock: Lock, action: () -> T): T {
-    lock.lock()
+inline fun <T> foo(action: () -> T) {
     try {
-        return action()
+        action()
+    } finally {
+        // something...
     }
-    finally {
-        lock.unlock()
+}
+
+class LockOwner(val lock: Lock) {
+    fun runUnderLock(body: () -> Unit) {
+        synchronized(lock, body)
     }
 }
 
 fun main() {
-    val l = Lock()
-    synchronized(l) {
-
+    println("Before")
+    foo() {
+        println("Action")
     }
+    println("After")
 }
