@@ -4,7 +4,7 @@ fun main() {
     val list1 = listOf(1, 2)
     printContents(list1)
 
-    //val list2 = mutableListOf(1, 2)
+    val list2 = mutableListOf(1, 2)
     //addAnswer(list2)
 }
 

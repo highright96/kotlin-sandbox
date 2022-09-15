@@ -6,7 +6,10 @@ open class Animal {
     }
 }
 
-class Herd<T : Animal> {
+class Herd<out T : Animal>(
+    val leadAnimal: T,
+    //var leadAnimal2: T
+) {
     operator fun get(i: Int): T {
         TODO()
     }
